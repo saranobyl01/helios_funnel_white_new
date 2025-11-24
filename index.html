@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5W4G9398');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-5W4G9398"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'GTM-5W4G9398');
+    </script>
+    <!-- End Google Analytics 4 -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1600458514248498');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17579838823"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-17579838823');
+    </script>
+    <!-- End Google Ads Conversion Tracking -->
+
+
+    <title>HeliosMeds - Transform Your Life with Medical Weight Loss</title>
+    <meta name="description" content="Achieve lasting weight loss results with HeliosMeds personalized medical programs. Expert care, proven results." />
+    <meta name="author" content="HeliosMeds" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="HeliosMeds - Medical Weight Loss Solutions" />
+    <meta property="og:description" content="Transform your life with personalized medical weight loss programs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://checkout.heliosmeds.com/v1/" />
+
+
+    
+    <script type="text/javascript" src="https://www.vkkzmo8trk.com/scripts/main.js"></script>
+    <script type="text/javascript">
+    // Intercept XMLHttpRequest to capture transaction_id from EF SDK response
+    (function() {
+      var originalOpen = XMLHttpRequest.prototype.open;
+      var originalSend = XMLHttpRequest.prototype.send;
+
+      XMLHttpRequest.prototype.open = function(method, url) {
+        this._url = url;
+        return originalOpen.apply(this, arguments);
+      };
+
+      XMLHttpRequest.prototype.send = function() {
+        if (this._url && this._url.includes('vkkzmo8trk.com/sdk/click')) {
+          this.addEventListener('load', function() {
+            try {
+              var response = JSON.parse(this.responseText);
+              if (response && response.transaction_id) {
+                console.log('✅ Captured transaction_id from EF SDK:', response.transaction_id);
+                
+                // Store in localStorage
+                var trackingParams = JSON.parse(localStorage.getItem('trackingParams') || '{}');
+                trackingParams.transactionId = response.transaction_id;
+                localStorage.setItem('trackingParams', JSON.stringify(trackingParams));
+                
+                // Also set as a cookie (accessible by JS)
+                document.cookie = 'transaction_id=' + response.transaction_id + '; path=/; max-age=86400';
+                
+                console.log('💾 Stored transaction_id in localStorage and cookie');
+              }
+            } catch (e) {
+              console.error('Error parsing EF SDK response:', e);
+            }
+          });
+        }
+        return originalSend.apply(this, arguments);
+      };
+    })();
+
+    // Also intercept fetch API
+    (function() {
+      var originalFetch = window.fetch;
+      window.fetch = function() {
+        var url = arguments[0];
+        if (typeof url === 'string' && url.includes('vkkzmo8trk.com/sdk/click')) {
+          return originalFetch.apply(this, arguments).then(function(response) {
+            response.clone().json().then(function(data) {
+              if (data && data.transaction_id) {
+                console.log('✅ Captured transaction_id from EF SDK (fetch):', data.transaction_id);
+                
+                // Store in localStorage
+                var trackingParams = JSON.parse(localStorage.getItem('trackingParams') || '{}');
+                trackingParams.transactionId = data.transaction_id;
+                localStorage.setItem('trackingParams', JSON.stringify(trackingParams));
+                
+                // Also set as a cookie (accessible by JS)
+                document.cookie = 'transaction_id=' + data.transaction_id + '; path=/; max-age=86400';
+                
+                console.log('💾 Stored transaction_id in localStorage and cookie');
+              }
+            }).catch(function(e) {
+              console.error('Error parsing EF SDK response:', e);
+            });
+            return response;
+          });
+        }
+        return originalFetch.apply(this, arguments);
+      };
+    })();
+
+    EF.click({
+        offer_id: EF.urlParameter('oid'),
+        affiliate_id: EF.urlParameter('affid'),
+        source_id: EF.urlParameter('source_id'),
+        sub1: EF.urlParameter('sub1'),
+        sub2: EF.urlParameter('sub2'),
+        sub3: EF.urlParameter('sub3'),
+        sub4: EF.urlParameter('sub4'),
+        sub5: EF.urlParameter('sub5'),
+        uid: EF.urlParameter('uid'),
+        transaction_id: EF.urlParameter('_ef_transaction_id'),
+    });
+    </script>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W4G9398"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Meta Pixel (noscript) -->
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1600458514248498&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel (noscript) -->
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
